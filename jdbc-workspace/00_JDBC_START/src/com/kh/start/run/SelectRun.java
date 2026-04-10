@@ -7,7 +7,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SelectRun {
-
+	/*
+	 * 오늘 실습 겸 주말 숙제
+	 * 
+	 * 1. 어제 만들었던 테이블 삼종세트 각각 INSERT하는 코드 SELECT하는 코드 작성해서 둘 다 해보기
+	 * 2. 저번주에한 MVC 한번 더 만들어보기
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// 각자 작업중인 DB서버에서
 		// 각자 자신의 계정에 존재하는 ZONE테이블의 모든 행을 조회해서
@@ -49,7 +62,7 @@ public class SelectRun {
 		// 실행시점에 필요한 데이터베이스 드라이버들 동적으로 로드
 		// 코드의 변경 없이 데이터베이스를 연결할 수 있게 하기 위해서
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 등록!");
+			
 			
 			// 2. Connection 객체 생성
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", 
