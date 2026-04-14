@@ -148,9 +148,6 @@ public class SpeciesDao {
 				conn.commit();
 			}
 			
-			
-			
-			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
