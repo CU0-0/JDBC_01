@@ -45,7 +45,6 @@ public class JdbcTemplate {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	public static void close(Connection conn) {
 		try {
@@ -55,9 +54,6 @@ public class JdbcTemplate {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 }
 	

@@ -3,6 +3,8 @@ package com.kh.member.view;
 import java.util.Scanner;
 
 import com.kh.member.controller.MemberController;
+import com.kh.member.exception.DuplicateMemberldException;
+import com.kh.member.exception.MemberldToLargeException;
 import com.kh.member.model.dto.MemberDto;
 
 public class MemberView {
@@ -43,9 +45,19 @@ public class MemberView {
 		String memberPwd = sc.nextLine();
 		System.out.print("사용하실 이름을 입력해주세요 > ");
 		String memberName = sc.nextLine();
-		
-		mc.signUp(new MemberDto(memberId, memberPwd, memberName));
-		
+		try {
+			int result = mc.signUp(new MemberDto(memberId, memberPwd, memberName));
+			
+			if(result > 0) {
+				System.out.println("회원가입 성공~");
+			}else {
+				System.out.println("회원가입 실패 ㅠㅠ");
+			}
+		}catch(MemberldToLargeException e) {
+			System.out.println("아이디 깁니다용 ~~ 짧게 다시 시도하시와용");
+		}catch(DuplicateMemberldException e) {
+			System.out.println("이미 존재하는 아이디 입니다. 다른 아이디로 시도하세요!");
+		}
 		
 		
 	}

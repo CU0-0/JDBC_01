@@ -9,8 +9,8 @@ public class MemberController {
 		return new MemberService().idCheck(memberId); 
 	}
 
-	public void signUp(MemberDto member) {
-		new MemberService().signUp(member);
+	public int signUp(MemberDto member) {
+		return new MemberService().signUp(member);
 		
 	}
 
