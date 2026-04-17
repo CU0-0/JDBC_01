@@ -36,22 +36,14 @@ public class Template {
 			// 3단계 : SqlSession 만들기
 			// 맏드는 법 : Factory를 참조해서 메소드를 호출한다.
 			// .openSession();
-			
 			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession();
-			
-			
-			
-			
-			
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 		return sqlSession;
 	}
+	
+	
 	
 }

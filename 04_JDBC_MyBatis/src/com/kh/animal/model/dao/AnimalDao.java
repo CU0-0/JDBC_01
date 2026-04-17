@@ -27,8 +27,14 @@ public class AnimalDao {
 
 	public List<AnimalDto> findByKeyword(SqlSession session, String keyword) {
 		return session.selectList("animalMapper.findByKeyword", keyword);
-		
-		
+	}
+
+	public int updateAnimal(SqlSession session, AnimalDto animal) {
+		return session.update("animalMapper.updateAnimal", animal);
+	}
+
+	public int deleteAnimal(SqlSession session, String animalId) {
+		return session.delete("animalMapper.deleteAnimal", animalId);
 	}
 
 }

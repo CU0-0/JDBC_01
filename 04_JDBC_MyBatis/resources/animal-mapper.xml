@@ -124,9 +124,26 @@
 		ANIMAL
 	WHERE
 		ANIMAL_NAME LIKE '%'||#{keyword}||'%'
-	
-	
 	</select>
+
+	<select id="updateAnimal">
+	UPDATE
+		ANIMAL 
+	SET
+		ZONE_ID = #{zoneId}
+		, KEEPER_ID = #{keeperId}
+		, WEIGHT_KG = #{weightKg}
+	WHERE
+		ANIMAL_ID = #{animalId}
+	</select>
+
+	<delete id="deleteAnimal">
+	DELETE
+	FROM
+		ANIMAL
+	WHERE
+		ANIMAL_ID = #{animalId}
+	</delete>
 
 
 </mapper>
