@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="com.kh.delivery.model.dto.DeliMember" alias="member"/>
+		<typeAlias type="com.kh.delivery.model.dto.Menu" alias="menu"/>
+		<typeAlias type="com.kh.delivery.model.dto.Order" alias="order"/>
+		<typeAlias type="com.kh.delivery.model.dto.Restaurant" alias="restaurant"/>
+	</typeAliases>
+	
+	<environments default="deployment">
+		<environment id="deployment">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" />
+				<property name="username" value="C##SU" />
+				<property name="password" value="SU" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="member-mapper.xml"/>
+		<mapper resource="menu-mapper.xml"/>
+		<mapper resource="order-mapper.xml"/>
+		<mapper resource="restaurant-mapper.xml"/>
+	</mappers>
+	
+	
+</configuration>

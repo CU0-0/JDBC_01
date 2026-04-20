@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="restaurantMapper">
+	<resultMap id="restaurantResultMap" type="Restaurant">
+		<id property="restNo" column="REST_NO"/>
+		<result property="restName" column="REST_NAME"/>
+		<result property="category" column="CATEGORY"/>
+		<result property="minPrice" column="MIN_PRICE"/>
+		<result property="deliveryFee" column="DELIVERY_FEE"/>
+	</resultMap>
+	
+	<sql id="selectRestColumn">
+	SELECT
+		REST_NO restNo
+		, REST_NAME restName
+		, CATEGORY category
+		, MIN_PRICE minPrice		
+		, DELIVERY_FEE deliveryFee
+	FROM
+		RESTAURANT
+	</sql>
+	
+	<select id="findAllRest" resultType="restaurant">
+	<include refid="selectRestColumn" />
+	ORDER
+	BY
+		REST_NO DESC
+	</select>
+	
+
+</mapper>
