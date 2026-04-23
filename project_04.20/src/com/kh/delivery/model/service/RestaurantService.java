@@ -1,5 +1,6 @@
 package com.kh.delivery.model.service;
 
+import java.sql.Connection;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,5 +18,13 @@ public class RestaurantService {
 		session.close();
 		
 		return rests;
+	}
+
+	public Restaurant selectRest(String restNo) {
+		Connection conn = getConnection();
+		Restaurant rest = new RestaurantDao()
+							.selectRest(conn, Integer.parseInt(restNo));
+		close(conn);
+		return rest;
 	}
 }

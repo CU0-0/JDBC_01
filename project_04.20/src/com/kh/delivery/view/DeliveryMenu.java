@@ -23,7 +23,7 @@ public class DeliveryMenu {
 			
 			switch(menu) {
 			case "1" : findAllRest(); break;
-			case "2" :  break;
+			case "2" : selectRest(); break;
 			case "3" :  break;
 			case "4" :  break;
 			case "9" : sc.close(); return;
@@ -31,6 +31,7 @@ public class DeliveryMenu {
 			}
 		}
 	}
+
 
 	private void findAllRest() {
 		System.out.println("가계 전체 조회 서비스입니다.");
@@ -43,12 +44,36 @@ public class DeliveryMenu {
 				System.out.println("가계번호 : " + rest.getRestNo()
 								+", 가계이름 : " + rest.getRestName( )
 								+", 카테고리 : " + rest.getCategory()
-								+", 최소주문 : " + rest.getMinPrice()
+								+", 최소주문금액 : " + rest.getMinPrice()
 								+", 배달비 : " + rest.getDeliveryFee()	);
 			}
 		}
 	}
 
+	private void selectRest() {
+		System.out.println("가계 목록 상세보기 서비스 입니다.");
+		findAllRest();
+		System.out.println("상세보기를 원하시는 가계번호를"
+				+ " 입력해주세요 > ");
+		String restNo = sc.nextLine();
+		Restaurant rest = mc.selectRest(restNo);
+		
+		if(rest != null) {
+			System.out.println("가게 번호" + rest.getRestNo());
+			System.out.println("---------------------------------");
+			System.out.println("가계이름 : "+ rest.getRestName());
+			System.out.println("=================================");
+			System.out.println("카테고리 : " + rest.getCategory());
+			System.out.println("---------------------------------");
+			System.out.println("최소주문금액 : " + rest.getMinPrice());
+			System.out.println("---------------------------------");
+			System.out.println("배달비 : " + rest.getDeliveryFee());
+			System.out.println("=================================");
+		}else {
+			System.out.println("존재하지 않는 가계 번호입니다");
+		}
+		
+	}
 	
 	
 	

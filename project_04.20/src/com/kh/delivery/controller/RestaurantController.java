@@ -9,4 +9,8 @@ public class RestaurantController {
 	public List<Restaurant> findAllRest() {
 		return new RestaurantService().findAllRest();
 	}
+
+	public Restaurant selectRest(String restNo) {
+		return new RestaurantService().selectRest(restNo);
+	}
 }
