@@ -22,6 +22,7 @@ public class KeeperView {
 			System.out.println("3. 사육사 수정하기");
 			System.out.println("4. 사육사 삭제하기");
 			System.out.println("5. 회원 서비스로 이동하기");
+			System.out.println("9. 프로그램 종료");
 			System.out.print("원하시는 메뉴를 선택해주세요 > ");
 			String menu = sc.nextLine();
 			
